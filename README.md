@@ -89,11 +89,37 @@ o CPF deve conter 11 caracteres, e o telefone deve conter o DDD do Brasil (55) j
 as validações mencionadas anteriormente vale para essa função tambem.
 
 
--DELETE /api/v1/customers/{customer_id}
+- DELETE /api/v1/customers/{customer_id}
 Como essa função não retorna um Corpo, não coloquei foto, mas ele retorna o Response 204 - No content
 
 
 -> Produtos:
+
+<img width="1317" height="299" alt="products" src="https://github.com/user-attachments/assets/d5446f49-46f8-4bf8-ac05-872438437e4b" />
+Esse Endpoint nós tras uma implementação basica de CRUD permitindo o usuário Criar,Editar e Deletar as instancias do modelo Produto.
+
+
+Exemplos:
+
+- GET /api/v1/products/:
+<img width="1795" height="545" alt="Screenshot from 2025-08-04 11-52-28" src="https://github.com/user-attachments/assets/3d4acfc7-30bb-412e-b057-55fce49e9fda" />
+
+
+- GET /api/v1/products/{product_id}:
+<img width="1802" height="446" alt="get-id" src="https://github.com/user-attachments/assets/a74717b4-f14e-412d-9415-ebd74e07d4d8" />
+
+
+- POST /api/v1/products/:
+<img width="1798" height="732" alt="post" src="https://github.com/user-attachments/assets/bd2e1e0d-9690-45d1-bcae-3f1c79348646" />
+
+
+- PUT /api/v1/products/{product_id}:
+<img width="1795" height="636" alt="put" src="https://github.com/user-attachments/assets/5fc9c106-b7d6-4a9e-9069-e9496b17187d" />
+
+  
+- DELETE /api/v1/products/{product_id}:
+  
+
 
 
 
