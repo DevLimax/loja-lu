@@ -147,30 +147,63 @@ GET /api/v1/orders/{order_id}:
 
 POST /api/v1/orders/:
 <img width="1795" height="729" alt="post" src="https://github.com/user-attachments/assets/114dceba-e95d-4e9c-9198-3437c518650d" />
+(Quando um novo pedido é criado, a integração da loja com o whatssap envia uma mensagem automatica para o cliente cadastrado no pedido)
 
 
 PUT /api/v1/orders/{order_id}:
 <img width="1798" height="589" alt="Screenshot from 2025-08-04 13-15-07" src="https://github.com/user-attachments/assets/a7a27534-eda8-4e27-ba2e-b3723c5717f2" />
+(Caso uma das alterações seja o status do pedido, é enviado uma mensagem automatica informando o novo status do pedido para o cliente cadastrado no pedido)
 
 
 DELETE /api/v1/orders/{order_id}:
 204 - No content
 
 
+-> Mensagens (integração com Whatssap)
+
+<img width="1312" height="153" alt="messages" src="https://github.com/user-attachments/assets/a179eb1b-2bbe-4117-9c4d-f2e6ccd51958" />
+para resolver esse desafio pesquisei mais a fundo sobre a API do whatsapp, como a API original é cobrado um valor para uso, resolvi utilizar outro meio que é o EvolutionAPI, uma API muito facil
+de usar e que permite a nós enviar de um simples texto a um chatbot sem custo nenhum.
+
+não consegui ter muita criatividade para mensagens prontas, mas consegui colocar o Basico como o envio de peças em promoção e pedidos feitos.
+
+Exemplos:
+
+POST /api/v1/messages/send_order/{order_id}:
+<img width="1794" height="221" alt="Screenshot from 2025-08-04 13-31-36" src="https://github.com/user-attachments/assets/83185d31-9556-4575-a117-020d71b29d05" />
+nessa rota é algo simples e facil de se entender, oque acontece nesse Endpoint é que ele necessita de um pedido criado para funcionar, o usuário coloca o ID do pedido e o endpoint busca no banco de dados o pedido e todos os seus dados contidos, logo após achar o pedido o endpoint aciona uma função que envia uma mensagem automatica para o número do cliente cadastrado no pedido. enviando assim dados como: ID do pedido, Preço total, Peças, Nome do cliente, Status do pedido, (essa função de mensagem automatica está implementada na criação do pedido, quando um pedido é criado, automaticamente essa função é ativada e envia a mensagem para o cliente, sendo assim esse Endpoint so é necessario caso haja algum erro no Endpoint de criação de pedido ou o cliente solicite novamente os dados do seu pedido.)
+
+Mensagem:
+  
+  <img width="286" height="238" alt="Screenshot from 2025-08-04 13-45-34" src="https://github.com/user-attachments/assets/ae37ed8b-9e1a-40c3-8390-ef1666ad9621" />
 
 
+POST /api/v1/messages/send_promotion/{product_id}
+<img width="1805" height="387" alt="Screenshot from 2025-08-04 13-40-59" src="https://github.com/user-attachments/assets/c5be1cd0-f31d-4951-ac42-1007bfcd0f05" />
+aqui é necessario preencher os campos customer_id e promotion_price, e automaticamente o endpoint envia uma mensagem automatica de promoção do produto escolhido para o cliente
+
+Mensagem:
+  
+  <img width="271" height="116" alt="Screenshot from 2025-08-04 13-47-03" src="https://github.com/user-attachments/assets/5108245d-56eb-45f0-b974-8a6ac57cd9cc" />
 
 
+Como rodar o projeto ?
 
+1 - Certifique-se de que o python está instalado na sua maquina.
 
+2 - Copie a pasta do projeto no Github para sua maquina e abra no seu editor de texto (Vscode, Cursor, etc)
 
+3 - Crie um Ambiente Virtual com o codigo -> python3 -m venv venv
 
+4 - Entre no seu ambiente virtual e baixe as dependencias -> pip install -r requirements.txt
 
+5 - Configurar o banco de dados:
+<img width="661" height="119" alt="Screenshot from 2025-08-04 13-59-13" src="https://github.com/user-attachments/assets/33775e6d-8344-4478-8ea5-29a1815929be" />
+Não se esqueça de criar um banco para o projeto (pode ser de sua preferencia, PostgresSQL, SQLITE, MongoDB) 
+altere o (lima) e (postgres) para seu usuario e senha do banco. 
 
+6 - Rodar o arquivo (main.py)
 
+Conclusões:
 
-
-
-
-
-
+Esse projeto foi essencial para testar minha capacidade com o framework FASTAPI, é uma tecnologia muito simples e que promete se tornar uma das mais utilizadas para desenvolvimento WEB com python, estou em constante desenvolvimento com as tecnologias que a linguagem tem a proporcionar, e em breve irei continuar alimentando meu portfolio com mais projetos com FastAPI, Django e afins. agradeço desde ja pelo tempo que tiveram para ler esse documento.
