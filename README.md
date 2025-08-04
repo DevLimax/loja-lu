@@ -101,6 +101,8 @@ Esse Endpoint nós tras uma implementação basica de CRUD permitindo o usuário
 
 Exemplos:
 
+
+
 - GET /api/v1/products/:
 <img width="1795" height="545" alt="Screenshot from 2025-08-04 11-52-28" src="https://github.com/user-attachments/assets/3d4acfc7-30bb-412e-b057-55fce49e9fda" />
 
