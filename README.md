@@ -20,7 +20,6 @@ consumida por uma interface Front-End, que será desenvolvida por outro time.
 Implemente uma funcionalidade adicional na API que permita o envio de
 mensagens de WhatsApp para clientes utilizando WhatsApp API.
 
-Endpoints: Usuário / Clientes / Produtos / Pedidos / Mensagens
 Banco de dados utilizado: PostgresSQL
 
 Models:
@@ -34,6 +33,72 @@ Swagger & Docs:
 <img width="1920" height="865" alt="Screenshot from 2025-08-04 09-51-41" src="https://github.com/user-attachments/assets/2489d3a8-3181-47b6-be0e-2b0c52d01267" />
 <img width="1920" height="865" alt="Screenshot from 2025-08-04 09-53-36" src="https://github.com/user-attachments/assets/16ce7e2c-3051-4fe1-b9e2-ede0e6c0ccec" />
 O FastAPI facilita a documentação da API implementando o Swagger e o Doc automaticamente, sendo possivel validar ambos por meio do (docs) ou (redoc), isso facilita muito a vida do desenvolvedor que tem somente o trabalho de configurar as respostas e textos para deixar a documentação ainda mais acessivel.
+
+Endpoints: Usuário / Clientes / Produtos / Pedidos / Mensagens
+
+-> Usuarios / Autenticação:
+<img width="1463" height="301" alt="image" src="https://github.com/user-attachments/assets/f52b5a2e-10b6-47a8-a7fa-2b5a28d060af" />
+Esse endpoint consiste em conectar o usuário (time de vendas) com a interface do sistema para que o usuário tenha acesso as demais funções que são protegidas com Token JWT, apartir disso o usuário tera as permissões necessarias para realizar suas tarefas de acordo com seu nivel de permissão.
+
+- POST /api/v1/auth/login:
+<img width="1522" height="392" alt="Screenshot from 2025-08-04 10-42-55" src="https://github.com/user-attachments/assets/13172fb8-d076-41d7-ad7b-9cc3decfeaf6" />
+realiza o login do usuário por FormData e retorna o access e refresh token.
+
+- POST /api/v1/auth/refresh-token:
+<img width="1522" height="392" alt="Screenshot from 2025-08-04 10-45-18" src="https://github.com/user-attachments/assets/540a0101-b78b-419a-9069-209a6577a4d8" />
+cria um novo access token e refresh token, apartir o refresh-token anterior, serve justamente para renovar o login do usuário sem a necessidade de fazer login novamente, o refresh-token tem duração de 12 dias para expirar.
+
+- POST /api/v1/auth/register:
+<img width="1519" height="408" alt="Screenshot from 2025-08-04 10-47-59" src="https://github.com/user-attachments/assets/90dd0a68-8d2c-4396-aa63-0ef1b4e08b5f" />
+cria um novo usuário no sistema (vale lembrar que na criação de usuário a senha é codificada e guardada no banco para ter um maior grau de segurança, para realizar validações como login, a senha é decoficida para validação.)
+
+- GET /api/v1/auth/logged:
+<img width="1799" height="264" alt="Screenshot from 2025-08-04 10-52-23" src="https://github.com/user-attachments/assets/4118fda5-3e01-455d-91d7-a6eccad66be2" />
+retorna a instancia do usuário logado.
+
+-> Clientes: 
+<img width="1309" height="293" alt="Screenshot from 2025-08-04 10-53-27" src="https://github.com/user-attachments/assets/1fa19172-1170-4a36-85e1-2be2ffb79168" />
+Esse Endpoint nós tras uma implementação basica de CRUD permitindo o usuário Criar,Editar e Deletar as instancias do modelo Cliente.
+
+Exemplos:
+- GET /api/v1/customers/:
+<img width="10" height="5" alt="Screenshot from 2025-08-04 10-59-14" src="https://github.com/user-attachments/assets/6cc9c010-2301-4ad6-90c4-1d11f90b9a64" />
+
+- GET /api/v1/customers/{customer_id}:
+<img width="1796" height="722" alt="Screenshot from 2025-08-04 10-58-40" src="https://github.com/user-attachments/assets/457fc38d-6be3-49b1-99a1-ecc56a5750c5" />
+
+- POST /api/v1/customers/
+<img width="1796" height="462" alt="Screenshot from 2025-08-04 11-03-50" src="https://github.com/user-attachments/assets/19a515c9-8cde-4166-ac33-b4845e270539" />
+nesse método há validações de Email, CPF e Telefone, se caso tenha um cliente com algum valor desse ja existente o Endpoint retorna um erro 409 (Conflict),
+o CPF deve conter 11 caracteres, e o telefone deve conter o DDD do Brasil (55) junto do DDD do estado ex: (85) -> 5585921616652
+
+- PUT /api/v1/customers/{customer_id}
+<img width="1799" height="416" alt="Screenshot from 2025-08-04 11-11-19" src="https://github.com/user-attachments/assets/60681e24-d430-42c0-bb2a-053218a5ccd5" />
+as validações mencionadas anteriormente vale para essa função tambem.
+
+-DELETE /api/v1/customers/{customer_id}
+Como essa função não retorna um Corpo, não coloquei foto, mas ele retorna o Response 204 - No content
+
+-> Produtos:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
