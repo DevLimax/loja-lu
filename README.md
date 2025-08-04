@@ -25,3 +25,8 @@ Banco de dados utilizado: PostgresSQL
 
 Models:
 <img width="1724" height="837" alt="Models" src="https://github.com/user-attachments/assets/11852451-28e6-4a80-9011-b31de9f6c4cb" />
+
+usei o alembic para facilitar os processos de migrações no banco de dados e cheguei ao resultado final ilustrado nessa imagem,
+o banco teve varias alterações que estavam interferindo no resultado final.
+
+
