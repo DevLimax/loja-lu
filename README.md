@@ -62,10 +62,12 @@ Esse Endpoint nós tras uma implementação basica de CRUD permitindo o usuário
 
 Exemplos:
 - GET /api/v1/customers/:
-<img width="10" height="5" alt="Screenshot from 2025-08-04 10-59-14" src="https://github.com/user-attachments/assets/6cc9c010-2301-4ad6-90c4-1d11f90b9a64" />
+<img width="1796" height="727" alt="Screenshot from 2025-08-04 11-36-03" src="https://github.com/user-attachments/assets/e814122a-5e20-4541-95ec-3006cf0050b5" />
+
 
 - GET /api/v1/customers/{customer_id}:
-<img width="1796" height="722" alt="Screenshot from 2025-08-04 10-58-40" src="https://github.com/user-attachments/assets/457fc38d-6be3-49b1-99a1-ecc56a5750c5" />
+<img width="1793" height="295" alt="Screenshot from 2025-08-04 11-36-21" src="https://github.com/user-attachments/assets/865eb727-6484-4be6-bd7d-f0eee196d628" />
+
 
 - POST /api/v1/customers/
 <img width="1796" height="462" alt="Screenshot from 2025-08-04 11-03-50" src="https://github.com/user-attachments/assets/19a515c9-8cde-4166-ac33-b4845e270539" />
