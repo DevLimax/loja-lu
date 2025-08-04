@@ -30,5 +30,7 @@ usei o alembic para facilitar os processos de migrações no banco de dados e ch
 o banco teve varias alterações que estavam interferindo no resultado final.
 
 Swagger: 
-<img width="1920" height="1080" alt="Screenshot from 2025-08-04 08-50-17" src="https://github.com/user-attachments/assets/dcd6e492-7c6a-4ddb-bfea-a65208feaa52" />
+<img width="1920" height="1080" alt="Screenshot from 2025-08-04 08-50-17" src="https://github.com/user-attachments/assets/084e256c-4ed6-4bda-8ea8-cf859b49a6c2" />
+
+
 
