@@ -29,9 +29,12 @@ Models:
 usei o alembic para facilitar os processos de migrações no banco de dados e cheguei ao resultado final ilustrado nessa imagem,
 o banco teve varias alterações que estavam interferindo no resultado final.
 
-Swagger: 
-<img width="1920" height="1080" alt="Screenshot from 2025-08-04 08-50-17" src="https://github.com/user-attachments/assets/600331bb-b415-443d-8fda-8b7c41b86da4" />
-<img width="1920" height="1080" alt="Screenshot from 2025-08-04 09-40-48" src="https://github.com/user-attachments/assets/b91c4133-9a57-45f6-a3ad-63a3d222656f" />
+Swagger & Docs: 
+<img width="1920" height="865" alt="Screenshot from 2025-08-04 09-52-03" src="https://github.com/user-attachments/assets/0ea90067-b639-40c8-8e53-2f2d8ce277d0" />
+<img width="1920" height="865" alt="Screenshot from 2025-08-04 09-51-41" src="https://github.com/user-attachments/assets/2489d3a8-3181-47b6-be0e-2b0c52d01267" />
+<img width="1920" height="865" alt="Screenshot from 2025-08-04 09-53-36" src="https://github.com/user-attachments/assets/16ce7e2c-3051-4fe1-b9e2-ede0e6c0ccec" />
+O FastAPI facilita a documentação da API implementando o Swagger e o Doc automaticamente, sendo possivel validar ambos por meio do (docs) ou (redoc), isso facilita muito a vida do desenvolvedor que tem somente o trabalho de configurar as respostas e textos para deixar a documentação ainda mais acessivel.
+
 
 
 
