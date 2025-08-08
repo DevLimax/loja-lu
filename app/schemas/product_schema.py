@@ -36,7 +36,7 @@ class ProductSchemaCreate:
         price: Annotated[float, Form()],
         barcode: Annotated[str, Form()],
         category: Annotated[ProductModel.Category, Form()],
-        is_avaliabe: Annotated[bool, Form()],
+        is_avaliable: Annotated[bool, Form()],
         quantity: Annotated[int, Form()],
         expiration_date: Annotated[Union[datetime, None], Form()] = None
     ):
@@ -45,7 +45,7 @@ class ProductSchemaCreate:
         self.price = price
         self.barcode = barcode
         self.category = category
-        self.is_avaliable = is_avaliabe
+        self.is_avaliable = is_avaliable
         self.quantity = quantity
         self.expiration_date = expiration_date 
 

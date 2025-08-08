@@ -21,7 +21,7 @@ import shutil
 import uuid
 
 router = APIRouter()
-UPLOAD_DIR = "static/images_product/"
+UPLOAD_DIR = "app/static/images_product/"
 
 @router.get("/", response_model=List[ProductSchemaBase], status_code=status.HTTP_200_OK)
 async def get_products(db: AsyncSession = Depends(get_session),

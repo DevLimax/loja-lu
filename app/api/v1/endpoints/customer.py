@@ -85,11 +85,11 @@ async def create_client(customer: CustomerSchemaBase,
             await session.rollback()
             error_str = str(e).lower()
             if "(email)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Email já cadastrado")
             elif "(cpf)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="CPF já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="CPF já cadastrado")
             elif "(telephone)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Telefone já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Telefone já cadastrado")
             
         return new_customer
     
@@ -138,11 +138,11 @@ async def update_client(customer_id: int,
             await session.rollback()
             error_str = str(e).lower()
             if "(email)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Email já cadastrado")
             elif "(cpf)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="CPF já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="CPF já cadastrado")
             elif "(telephone)" in error_str:
-                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Telefone já cadastrado")
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Telefone já cadastrado")
             
         return customer_up
     

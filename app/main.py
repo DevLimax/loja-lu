@@ -3,7 +3,9 @@ from fastapi.staticfiles import StaticFiles
 from core.configs import settings
 from api.v1.api import router
 
-app = FastAPI(title="Loja-Lu API")
+app = FastAPI(title="Loja-Lu API",
+              version="1.0"
+)
 app.include_router(router, prefix=settings.API_V1_STR)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
